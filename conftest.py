@@ -9,14 +9,14 @@ def pytest_addoption(parser):
 
 @pytest.fixture(scope="function")
 def browser(request):
-    language = request.config.getoption("--language")
+    language = request.config.getoption('--language')
     if language not in [
         'ar', 'ca', 'cs', 'da', 'de', 'en', 'en-gb', 'el', 'es', 'fi', 'fr',
         'it', 'ko', 'nl', 'pl', 'pt', 'pt-br', 'ro', 'ru', 'sk', 'uk'
     ]:
         raise ValueError(
-            "Unsupported language. Choose ar, ca, cs, da, de, 'en', en-gb, el, "
-            "es, fi, fr, it, ko, nl, pl, pt, pt-br, ro, ru, sk, uk"
+            'Unsupported language. Choose ar, ca, cs, da, de, en, en-gb, el, '
+            'es, fi, fr, it, ko, nl, pl, pt, pt-br, ro, ru, sk, uk'
         )
 
     options = webdriver.ChromeOptions()
